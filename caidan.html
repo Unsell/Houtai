@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>联动菜单</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<style type="text/css">
+	select{  
+                margin-left:10px;  
+                margin-right:10px  
+            }  
+	</style>
+	<script type="text/javascript">
+		$(function(){
+			var a = [
+				{ "id":"1","firstName":"Bill" , "lastName":"Gates" },
+				{ "id":"2","firstName":"George" , "lastName":"Bush" },
+				{ "id":"3","firstName":"Thomas" , "lastName": "Carter" },
+				{ "id":"4","firstName":"Fkjkjkl" , "lastName": "Dkllk" }
+				];
+			var b = [
+				{ "id":"1","firstName":"Bill" , "lastName":"Gates" },
+				{ "id":"2","firstName":"George" , "lastName":"Bush" },
+				{ "id":"3","firstName":"Thomas" , "lastName": "Carter" },
+				{ "id":"4","firstName":"Fkjkjkl" , "lastName": "Dkllk" }
+				];
+				var str="";
+				 for(var i=0;i<a.length;i++){
+				str+="<option value='"+a[i]['id']+"'>"+a[i]['firstName']+"</option>";
+				}
+				$("#shen").append(str);
+			
+				$("#shen").change(function(){
+					var shiVal=$(this).val();
+					if (shiVal==1) {
+						var shi="";
+						for (var i = 0; i < b.length; i++) {
+							shi+="<option value='"+b[i]['id']+"'>"+b[i]['firstName']+"</option>";
+						};
+						// alert(shi);
+						$("#shi").append(shi);
+					};
+				})
+				})
+
+	</script>
+</head>
+<body>
+	<div class="liandong" >
+		省<select id="shen"><option>请选择</option></select>
+		市<select id="shi"><option>请选择</option></select>
+		区<select id="qu"><option>请选择</option></select>
+	</div>
+	
+</body>
+</html>
+
+
+
+
+
+<!--select id="shi" name="shi" style="display:none"></select-->
+	<!--select id="shi" name="shi" >
+		<ul id="sss">
+		<li id="shi_1">
+			<option>yuexiu</option>
+			<option>liwan</option>
+			<option>haizhu</option>
+			<option>tianhe</option>
+			<option>baiyun</option>
+			<option>huangpu</option>
+			<option>panyu</option>
+			<option>huadu</option>
+			<option>nansha</option>
+			<option>zengcheng</option>
+			<option>conghua</option>
+		</li>
+		<li id="shi_2" style="display:none">
+			<option>futian</option>
+			<option>luohu</option>
+			<option>nanshan</option>
+			<option>yantian</option>
+			<option>baoan</option>
+			<option>longgang</option>
+			<option>guangming</option>
+			<option>longhua</option>
+			<option>pingshan</option>
+			<option>dapeng</option>
+		</li>
+		<li id="shi_3" style="display: none">
+			<option>meijiang</option>
+			<option>meixian</option>
+			<option>xingning</option>
+			<option>pingyuan</option>
+			<option>jiaoling</option>
+			<option>dabu</option>
+			<option>fengshun</option>
+			<option>wuhua</option>
+		</li>
+		</ul>
+	</select-->
+	<!--select id="shi_1" name="shi" style="display: none">
+		<option>yuexiu</option>
+		<option>liwan</option>
+		<option>haizhu</option>
+		<option>tianhe</option>
+		<option>baiyun</option>
+		<option>huangpu</option>
+		<option>panyu</option>
+		<option>huadu</option>
+		<option>nansha</option>
+		<option>zengcheng</option>
+		<option>conghua</option>
+	</select-->

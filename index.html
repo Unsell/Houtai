@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		//animate de  duili  gongneng!
+		$("#lianxi1").click(function(){
+			var div=$("#1");
+			div.animate({height:'300px',opacity:'0.4'});
+			div.animate({width:'300px',opacity:'0.8'});
+		});
+		$("#lianxi2").click(function(){
+			var div=$("#2");
+			div.animate({left:'100px'},"slow");
+    			div.animate({fontSize:'3em'},"slow");
+		});
+
+		//stop  donghua!
+		$("#san").click(function(){
+			$("#xianshi").css("color","blue").slideToggle(5000);
+		});
+		$("#lianxi3").click(function(){
+			$("#xianshi").stop();
+		});
+
+		//huoqu  text and html de neirong!
+		$("#liaixi4_1").click(function(){
+			alert("Text:"+$("#lianxi4").text());
+		});
+		$("#lianxi4_2").click(function(){
+			alert("HTML:" +$("#lianxi4").html());
+		});
+
+		//use the val() to huode value!
+		$("#lianxi5").click(function(){
+			alert("Value:"+$("#lianxi5_1").val());
+		});
+
+		$("#lianxi6").click(function(){
+			$("#lianxi6_1").val("CHANGE!");
+		});
+		$("#lianxi7").click(function(){
+			$("#lianxi7_1").text(function(i,origText){
+					return "Old Text:" + origText + " New text :  Hello!My name  is Devil  ! !(index: "+i+")";
+			});
+		});
+		$("#lianxi8").click(function(){
+			$("#lianxi8_1").attr("href" ,"http://www.sina.com.cn");
+		});
+		$("input").focus(function(){
+			$("input").css("background-color","#ff0000");
+		});
+		$("input").blur(function(){
+			$("input").css("background-color","#00ff00");
+		});
+	});
+	
+	function appendText(){
+		var text1="<p>Text.</p>";
+		var text2=$("<p></p>").text("Text.");
+		var text3=document.createElement("p");
+		text3.innerHTML="Text.";
+		$("body").append(text1,text2,text3);
+	}
+
+	</script>
+	<style type="text/css">
+		#san,#xianshi
+		{
+			padding: 5px;
+			text-align: center;
+			background-color: #e5eecc;
+			border: solid 1px #c3c3c3;
+		}
+		#xianshi
+		{
+			padding: :100px;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<button id="lianxi1">kaishi donghua </button>
+	<button id="lianxi2">zitibianda</button>
+	<button id="lianxi3">stop</button>
+	<p>lianxi a </p>
+	<!--div id="1"style="height:100px;width:100px;position:absolute;background:#98bf21;"></div>
+	<br />
+	<br />
+	<div id="2" style="background:#98bf21;height:100px;width:200px;position:absolute;">hello</div-->
+
+	<div id="san" >Please hit!</div>
+	<div id="xianshi">Hello!!!</div>
+
+
+	<p id="lianxi4">sdasdasd<b>dsad</b>sdasd</p>
+	<button id="liaixi4_1">Text</button>
+	<button id="lianxi4_2">HTML</button>
+
+	<p>name:<input type="text" id="lianxi5_1" value="this is Five!"></p>
+	<button id="lianxi5">SHOW</button>
+
+	<p>Input filed:<input type="text" id="lianxi6_1" value="Mickey Mouse"></p>
+	<button id="lianxi6">SHEZHI</button>
+
+	<p id="lianxi7_1">This Is Seven!</p>
+	<button id="lianxi7">Huidiao  Hanshu!!</button>
+
+	<p><a href="http://www.baidu.com"  id="lianxi8_1">BaiDu.com!</a></p>
+	<button id="lianxi8">Change Http!</button>
+
+	<ol>
+		<li>sdasd</li>
+		<li>sdasdsd</li>
+		<li>ssw</li>
+	</ol>
+
+	<button onclick="appendText()">ADD Text!</button>
+
+	<h1 style="color:blue">sad</h1>
+
+	<p>我妈妈有一双<span style="color:red;">浅蓝色的</span>眼睛。</p>
+
+	<p>sdas </br>dfdfsd</p>
+
+	Input Value:  <input type="text" />
+	<br />
+
+	<form id="Form1" action="#">
+		<input type="text" id="11" value="文本框1" /><br />
+		<input type="password" id="22" /><br  />
+		<textarea rows="4" cols="10" >你想输入什么</textarea><br />
+		<button>确定</button><br />
+		<input id="Radio1" type="radio">
+		<label for="Radio1">男</label>
+		<input id="Radio2" type="radio">
+		<label for="Radio2">女</label><br />
+		<input id="checkbox1" type="checkbox" />
+		<label for="checkbox1">jQuery</label><br />
+		<input id="checkbox2" type="checkbox" />
+		<label for="checkbox2">JS</label><br />
+		<select id="Select1" >
+			<option value="0">苹果</option>
+			<option value="1" selected="selected">桔子</option>
+			<option value="2">荔枝</option>
+			<option value="3" selected="selected">葡萄</option>
+			<option value="4">香蕉</option>
+		</select>
+		
+	</form>
+
+</body>
+</html>

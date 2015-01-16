@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript">
+    $(function(){
+        
+        $("#Button1").click(function(){
+            $("#Input2,#Button2,#Button3").show();
+            $("#Button1").hide();
+        })
+
+        $("#Button3").click(function(){
+            $("#Input2,#Button2,#Button3").hide();
+            $("#Button1").show();
+        })
+
+        $("#Button2").click(function(){
+            var txt = "";
+            txt += "<option value ='"+ $("#Input2").val() +"'>" + $("#Input2").val() + "</option>"
+            $("#Select1").append(txt);
+        })
+
+        $("#Button4").click(function(){
+            var  TT = $("#Input1").val();
+            var  XX = $("#Select1").val();
+            var  YY = "<tr>" + "<th>" + TT + "<th>" + XX + "      " + "<span class=del>delete</span>" + "</tr>";
+            $("#ta").append(YY);
+        })
+
+        $("table").on('click','.del',function(){
+            $(this).parent().parent().remove();
+        })
+
+    })
+    </script>
+</head>
+<body>
+            <div>
+                  任务名称 :<input id="Input1"><br />
+                  选择分类 :<select id="Select1">
+                      <option value="stady">stady</option>
+                      <option value="work">work</option>
+                      <option value="life">life</option>
+                      <option value="recreation">recreation</option>
+                  </select>
+                  <button id="Button1">新建分类</button>
+                  <input id="Input2" style="display:none;"><button id="Button2" style="display:none;">提交新分类</button><button id="Button3" style="display:none;">取消</button><br />
+                  <button id="Button4">提交新任务</button>
+            </div>
+            <table id="ta">
+                
+            </table>
+</body>
+</html>

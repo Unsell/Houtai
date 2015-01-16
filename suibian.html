@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>  
+    <head>  
+        <title></title>  
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">  
+        <style type="text/css">             
+                        body{font-size:13px}  
+            select{  
+                margin-left:10px;  
+                margin-right:10px  
+            }  
+        </style>  
+        <script type="text/javascript" src="jquery.js"></script>  
+        <script type="text/javascript">  
+            $(function(){  
+                function objInit(obj) {//下拉列表框初始化  
+                    $(obj).html("<option>请选择</option>");  
+                }  
+                var arrData = {//定义一个数组保存相关数据  
+                        厂商1: { 品牌1_1:"型号1_1_1",品牌1_2:"型号1_2_1"},  
+                        厂商2: { 品牌2_1:"型号2_1_1",品牌2_2:"型号2_2_1"},  
+                        厂商3: { 品牌3_1:"型号3_1_1",品牌3_2:"型号3_2_1"}  
+                };  
+                  
+                $.each(arrData,function(pF){//遍历数据增加厂商项  
+                    $("#selF").append("<option>"+pF+"</option>");  
+                });  
+                  
+                $("#selF").change(function(){//厂商列表框选项改变事件  
+                        objInit("#selT");  
+                        objInit("#selC");  
+                        $.each(arrData,function(pF,pS){  
+                            if($("#selF option:selected").text() == pF) {  
+                                $.each(pS,function(pT,pC) {  
+                                    $("#selT").append("<option>"+pT+"</option>");  
+                                });  
+                                //品牌列表框选项改变事件  
+                                $("#selT").change(function(){  
+                                    objInit("#selC");  
+                                    $.each(pS,function(pT,pC){//遍历数据增加型号项  
+                                        if($("#selT option:selected").text() == pT) {  
+                                            $("#selC").append("<option>"+pC+"</option>");  
+                                        }  
+                                    });   
+                                });  
+                            }  
+                        });  
+                    });  
+            });  
+          
+</script>  
+    </head>  
+    <body>  
+        <div class="clsInit">  
+            厂商：<select id="selF"><option>请选择</option></select>  
+            品牌：<select id="selT"><option>请选择</option></select>  
+            型号：<select id="selC"><option>请选择</option></select>  
+        <div>  
+    </body>  
+</html>  

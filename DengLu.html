@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录界面</title>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+	<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<script type="text/javascript" src="jquery.js"></script>
+
+	<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	.DL{
+		width: 300px;
+		height: 200px;
+		margin: 220px auto;
+	}
+	
+	</style>
+
+
+	<script type="text/javascript">
+	$(function(){
+		$("#Button1").click(function(){
+			var ZH = $("#Input1").val();
+			var MM = $("#Input2").val();
+			if (ZH == "") {
+				alert("帐号不能为空!");
+				return 0;
+			};
+			if (MM =="") {
+				alert("密码不能为空!");
+				return 0;
+			};
+			var i = MM.length;
+			if (i< 6) {
+				alert("密码不能少于6位数!");
+				return 0;
+			};
+			window.open('kuangjia.html');
+		})
+	})
+	</script>
+
+
+</head>
+<body>
+		<div class="DL">
+			<form>
+				帐号: <input type="text" id="Input1" name="Input1"  /><br />
+				密码: <input type="text" id="Input2" name="Input2"  /><br />
+				<button id="Button1">登录</button>
+				<!-- <input type="submit" value="登录"> -->
+				<input type="reset" value="取消">
+			</form>
+		</div>
+</body>
+</html>

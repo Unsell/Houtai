@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		$("#Button1").click(function(){
+			if ($("#Input2.css.display")=="none") {
+			$("#Input2,#Button2").show();
+			};
+			else{
+			var In1=$("#Input2").val();
+			$("# Se").append(In1);	
+			}
+			
+		})
+		$("#Button2").click(function(){
+			$("#Input2,#Button2").hide();
+		})
+	})
+	</script>
+</head>
+<body>
+	<div style="float:left">
+		renwumingcheng<input id="Input1"><br />
+		xuanzefenlei<select id="Se">sda</select>   <input id="Input2" style="display:none">   <button id="Button1">tijiao</button><button id="Button2" style="display:none">quxiao</button><br />
+		<button id="Button3">asdasdasdas</button>
+	</div>
+	<div style="">
+		<input  id="Input3" >
+	</div>
+</body>
+</html>
